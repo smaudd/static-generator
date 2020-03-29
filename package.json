@@ -1,0 +1,25 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./source/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"node ./hound.js\" \"live-server public\"",
+    "build": "node ./source/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "hound": "^1.0.5",
+    "markdown-it": "^10.0.0",
+    "markdown-it-front-matter": "^0.2.1",
+    "yaml-front-matter": "^4.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "live-server": "^1.2.1"
+  }
+}
