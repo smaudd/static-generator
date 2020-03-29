@@ -13,12 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.0.1",
-    "hound": "^1.0.5",
     "markdown-it": "^10.0.0",
-    "markdown-it-front-matter": "^0.2.1",
     "yaml-front-matter": "^4.1.0"
   },
   "devDependencies": {
+    "hound": "^1.0.5",
     "concurrently": "^5.1.0",
     "live-server": "^1.2.1"
   }
