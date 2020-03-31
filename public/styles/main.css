@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Sen&display=swap');
+@import "./post.css"; /* Using a string */
+
+:root {
+  --primary-font: 'Raleway', sans-serif;
+  --secondary-font: 'Sen', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 1em;
+  margin: 0;
+}
+
+li {
+  padding: 20px;
+  font-family: var(--secondary-font);
+}

@@ -29,18 +29,18 @@ async function postsGenerator() {
     await fs.access(publicPosts)
     deleteFolderRecursive(`${process.cwd()}/public/posts`)
     await fs.mkdir(publicPosts)
-    buildContent()
+    return buildContent()
   } catch (err) {
     await fs.mkdir(publicPosts)
-    buildContent()
+    return buildContent()
   }
 }
 
 async function buildContent() {
-  console.log('\x1b[46m', '[STARTING BUILD]')
+  console.log('\x1b[46m', '[PROCESSING POSTS]', '\x1b[0m')
   try {
     const posts = await fs.readdir(postsFolder)
-    await Promise.all(
+    return Promise.all(
       posts.map(async post => {
         // Get post markdown
         const markdown = await readStream(
@@ -55,7 +55,7 @@ async function buildContent() {
 
         // Render HTML with template
         const html = await renderFile(
-          `${process.cwd()}/source/templates/index.ejs`,
+          `${process.cwd()}/source/templates/post.ejs`,
           data
         )
 
@@ -72,13 +72,20 @@ async function buildContent() {
         console.log('\x1b[46m', '[BUILT]:', '\x1b[0m', slug)
 
         // Write file
-        return writeStream(
+        await writeStream(
           `${process.cwd()}/public/posts/${slug}/index.html`,
           html
         )
+
+        return data
       })
     )
-    console.log('\x1b[46m', '[SUCCESSFULLY BUILT]:', '\x1b[0m', `${posts.length} posts`)
+    console.log(
+      '\x1b[46m',
+      '[SUCCESSFULLY BUILT]:',
+      '\x1b[0m',
+      `${posts.length} posts`
+    )
   } catch (err) {
     throw new Error('Error building contents', err)
   }
