@@ -40,11 +40,11 @@ async function buildContent() {
   console.log('\x1b[46m', '[PROCESSING POSTS]', '\x1b[0m')
   try {
     const posts = await fs.readdir(postsFolder)
-    return Promise.all(
+    const result = await Promise.all(
       posts.map(async post => {
         // Get post markdown
         const markdown = await readStream(
-          `${process.cwd()}/content/posts/${post}/post.md`
+          `${process.cwd()}/content/posts/${post}/${post}.md`
         )
 
         // Parse markdown to JSON
@@ -68,7 +68,6 @@ async function buildContent() {
         )
         await fs.mkdir(postPublicFolder)
 
-        // Notify
         console.log('\x1b[46m', '[BUILT]:', '\x1b[0m', slug)
 
         // Write file
@@ -76,17 +75,20 @@ async function buildContent() {
           `${process.cwd()}/public/posts/${slug}/index.html`,
           html
         )
-
+        
         return data
       })
     )
+    console.log('SON', posts.length)
     console.log(
       '\x1b[46m',
       '[SUCCESSFULLY BUILT]:',
       '\x1b[0m',
       `${posts.length} posts`
     )
+    return result
   } catch (err) {
+    console.log(err)
     throw new Error('Error building contents', err)
   }
 }
