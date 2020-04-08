@@ -29,3 +29,7 @@ li {
   padding: 20px;
   font-family: var(--secondary-font);
 }
+
+.post-preview {
+  font-family: var(--primary-font);
+}

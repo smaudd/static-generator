@@ -1,5 +1,6 @@
 ---
 title: Canolis Perro Dinamico
+date: 20/04/2020
 hi: Esto es un saludo
 ---
 

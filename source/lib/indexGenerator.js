@@ -37,13 +37,15 @@ async function buildContent(posts) {
     const data = YAML.parse(meta)
 
     // Append posts to data
-    data.post = posts
+    data.posts = posts
     // console.log(data)
     // // Render HTML with template
     const html = await renderFile(
       `${process.cwd()}/source/templates/index.ejs`,
       data
     )
+
+    console.log(data)
 
     // Write file
     await writeStream(`${process.cwd()}/public/index.html`, html)

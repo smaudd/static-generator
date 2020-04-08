@@ -5,10 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="./styles/main.css">
 </head>
 
 <body>
-  <%- include('partials/h2') %>
+  <ul>
+    <% posts.forEach(function(post){ %>
+    <%- include('partials/post', {post: post}); %>
+    <% }); %>
+  </ul>
 </body>
 
 </html>
