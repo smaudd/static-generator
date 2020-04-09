@@ -3,6 +3,7 @@ const fs = require('fs').promises
 const yamlFront = require('yaml-front-matter')
 const md = require('markdown-it')()
 const ejs = require('ejs')
+const ncp = require('ncp').ncp
 const {
   convertToSlug,
   writeStream,
@@ -50,6 +51,11 @@ async function buildContent() {
         // Parse markdown to JSON
         const data = yamlFront.loadFront(markdown)
 
+        // Resolve assets path
+        Object.keys(data.images).forEach(image => {
+          data.images[image] = `posts/${data.slug}/images/${data.images[image]}`
+        })
+
         // Parse markdown to HTML
         data.post = md.render(data.__content)
 
@@ -59,23 +65,38 @@ async function buildContent() {
           data
         )
 
-        // Parse slug
-        const slug = convertToSlug(data.title)
-
         // Create post folder
         const postPublicFolder = path.resolve(
-          `${process.cwd()}/public/posts/${slug}/`
+          `${process.cwd()}/public/posts/${data.slug}/`
         )
         await fs.mkdir(postPublicFolder)
 
-        console.log('\x1b[46m', '[BUILT]:', '\x1b[0m', slug)
+        console.log('\x1b[46m', '[BUILT]:', '\x1b[0m', data.slug)
+
+        // Create post assets folder
+        const postAssetsFolder = path.resolve(
+          `${process.cwd()}/public/posts/${data.slug}/images`
+        )
+        await fs.mkdir(postAssetsFolder)
+
+        // Copy assets
+        ncp(
+          path.resolve(`${process.cwd()}/content/posts/${post}/images`),
+          path.resolve(`${process.cwd()}/public/posts/${data.slug}/images`),
+          function(err) {
+            if (err) {
+              return console.error(err)
+            }
+            console.log('\x1b[46m', '[ASSETS]:', '\x1b[0m', data.slug)
+          }
+        )
 
         // Write file
         await writeStream(
-          `${process.cwd()}/public/posts/${slug}/index.html`,
+          `${process.cwd()}/public/posts/${data.slug}/index.html`,
           html
         )
-        
+
         return data
       })
     )

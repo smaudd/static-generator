@@ -9,11 +9,36 @@
 </head>
 
 <body>
-  <ul>
-    <% posts.forEach(function(post){ %>
+  <%- include('partials/nav'); %>
+  <!-- <ul>
+    <% posts.forEach(function(post, index){ %>
     <%- include('partials/post', {post: post}); %>
     <% }); %>
-  </ul>
+  </ul> -->
+  <main>
+    <!-- <section class="hero">
+      <img src="<%= posts[0].images.hero %>" />
+      <div class="container">
+        <h6><%= posts[0].category %></h6>
+        <h2><%= posts[0].title %></h2>
+        <div class="info">
+          <span><%= posts[0].author %></span>
+          <span><%= posts[0].date %></span>
+        </div>
+        <%- posts[0].post.substring(0, 220) %>....</p>
+        <a href="<%- posts[0].post.substring(0, 220) %>">LEER MAS</a>
+      </div>
+    </section> -->
+    <section class="posts">
+      <h2 class="title-section">MAS POSTS</h2>
+      <div class="posts-grid">
+        <%- include('partials/post-card', { post: posts[0] }); %>
+        <%- include('partials/post-card', { post: posts[0] }); %>
+        <%- include('partials/post-card', { post: posts[0] }); %>
+        <%- include('partials/post-card', { post: posts[0] }); %>
+      </div>
+    </section>
+  </main>
   <script src="./scripts/bundle.js"></script>
 </body>
 

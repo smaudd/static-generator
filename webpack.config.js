@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: ['./source/scripts/main.js'],
@@ -35,7 +36,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '../styles/[name].css',
       chunkFilename: '[id].css'
-    })
+    }),
+    new CopyPlugin([{ from: './content/assets', to: './public/assets' }])
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']
@@ -44,7 +46,7 @@ module.exports = {
     path: path.resolve(__dirname, 'public/scripts'),
     chunkFilename: '[name].js',
     publicPath: '/scripts/',
-    filename: 'bundle.js'
+    filename: 'index.js'
   },
   devServer: {
     contentBase: './public',
