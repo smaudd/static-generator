@@ -45,8 +45,6 @@ async function buildContent(posts) {
       data
     )
 
-    console.log(data)
-
     // Write file
     await writeStream(`${process.cwd()}/public/index.html`, html)
     console.log('\x1b[46m', '[SUCCESSFULLY BUILT INDEX]', '\x1b[0m')

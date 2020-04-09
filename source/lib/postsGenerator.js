@@ -79,7 +79,7 @@ async function buildContent() {
         return data
       })
     )
-    console.log('SON', posts.length)
+
     console.log(
       '\x1b[46m',
       '[SUCCESSFULLY BUILT]:',

@@ -10,7 +10,7 @@ const {
 const location = path.resolve(`${process.cwd()}/content/posts`)
 
 async function generate() {
-    for (let i = 0; i < 1000000; i++) {
+    for (let i = 0; i < 2; i++) {
         const slug = Math.random().toString(36).replace(/[^a-z]+/g, '')
         const message = `---\n title: ${slug} \n---
         `

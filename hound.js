@@ -13,20 +13,20 @@ const watchContent = hound.watch(content)
 // Add callbacks for file and directory events.  The change event only applies
 // to files.
 watchSource.on('create', () => {
-  exec('npm run build', (err, stdout, stderr) => {
+  exec('npm run build && npm run webpack', (err, stdout, stderr) => {
     // console.log(err, stdout, stderr)
     console.log('Compiling...')
   })
 })
 watchSource.on('change', () => {
-  exec('npm run build', (err, stdout, stderr) => {
+  exec('npm run build && npm run webpack', (err, stdout, stderr) => {
     console.log(stdout)
     console.log('Compiling...')
     // console.log(err, stdout, stderr)
   })
 })
 watchSource.on('delete', () => {
-  exec('npm run build', (err, stdout, stderr) => {
+  exec('npm run build && npm run webpack', (err, stdout, stderr) => {
     // console.log(err, stdout, stderr)
     console.log('Compiling...')
   })
@@ -35,20 +35,20 @@ watchSource.on('delete', () => {
 // Add callbacks for file and directory events.  The change event only applies
 // to files.
 watchContent.on('create', () => {
-  exec('npm run build', (err, stdout, stderr) => {
+  exec('npm run build && npm run webpack', (err, stdout, stderr) => {
     // console.log(err, stdout, stderr)
     console.log('Compiling...')
   })
 })
 watchContent.on('change', () => {
-  exec('npm run build', (err, stdout, stderr) => {
+  exec('npm run build && npm run webpack', (err, stdout, stderr) => {
     console.log(stdout)
     console.log('Compiling...')
     // console.log(err, stdout, stderr)
   })
 })
 watchContent.on('delete', () => {
-  exec('npm run build', (err, stdout, stderr) => {
+  exec('npm run build && npm run webpack', (err, stdout, stderr) => {
     // console.log(err, stdout, stderr)
     console.log('Compiling...')
   })
