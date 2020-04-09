@@ -1,6 +1,6 @@
 ---
-title: Estás fundido
-slug: mr-drogas
+title: El proxeneta malcogido
+slug: dr-tablaxxx
 category: SOSTENIBILIDAD
 author: Juan Cagueta
 date: 08 abril 2020

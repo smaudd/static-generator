@@ -17,7 +17,9 @@
   </ul> -->
   <main>
     <section class="hero" data-hax>
-      <img src="<%= posts[0].images.hero %>" />
+      <div class="hero-image-container">
+        <img src="<%= posts[0].images.hero %>" data-parallax />
+      </div>
       <div class="container">
         <h6><%= posts[0].category %></h6>
         <h2><%= posts[0].title %></h2>
@@ -33,9 +35,9 @@
     <section class="posts">
       <div class="posts-grid">
         <%- include('partials/post-card', { post: posts[0] }); %>
-        <%- include('partials/post-card', { post: posts[0] }); %>
-        <%- include('partials/post-card', { post: posts[0] }); %>
-        <%- include('partials/post-card', { post: posts[0] }); %>
+        <%- include('partials/post-card', { post: posts[1] }); %>
+        <%- include('partials/post-card', { post: posts[2] }); %>
+        <%- include('partials/post-card', { post: posts[3] }); %>
       </div>
     </section>
     <h2 class="title-section" data-hax>SOBRE EL EDITOR</h2>

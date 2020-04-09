@@ -1,6 +1,6 @@
 ---
-title: Estás fundido
-slug: mr-drogas
+title: maxilimo
+slug: dr-tabla
 category: SOSTENIBILIDAD
 author: Juan Cagueta
 date: 08 abril 2020

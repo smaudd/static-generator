@@ -1,7 +1,8 @@
 <a href="/posts/<%= post.slug %>" class="post-card post-gradient" data-hax>
-  <div class="post-image"
-    style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) -100%, rgba(0, 0, 0, 0.5) 100%), url('<%= posts[0].images.hero %>')">
-  </div>
+  <div class="post-gradient"
+    style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) -100%, rgba(0, 0, 0, 0.5) 100%)"
+  ></div>
+  <img src="<%= post.images.hero %>" data-parallax />
   <h6><%= post.category %></h6>
   <h3><%= post.title %></h3>
 </a>

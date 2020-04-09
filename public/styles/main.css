@@ -123,7 +123,7 @@
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
@@ -165,6 +165,7 @@ nav {
   width: 100%;
   transform: translateY(-100%);
   margin: 0;
+  list-style-type: none;
   z-index: 3;
 }
 
@@ -453,6 +454,10 @@ section.hero h2 {
   margin: 0;
 }
 
+section.hero .hero-image-container {
+  overflow: hidden;
+}
+
 section.hero img {
   width: 100%;
   padding: 0;
@@ -509,14 +514,15 @@ section.posts .posts-grid {
 
 section.posts .posts-grid .post-card {
   height: 200px;
-  background-position: cover;
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
   padding: var(--g1);
   position: relative;
   text-decoration: none;
-  opacity: 0;
+  overflow: hidden;
 }
 
 section.posts .posts-grid .post-card:visited {
@@ -540,11 +546,20 @@ section.posts .posts-grid .post-card h6 {
   z-index: 1;
 }
 
-section.posts .posts-grid .post-card .post-image {
+section.posts .posts-grid .post-card .post-gradient {
   position: absolute;
+  left: 0;
+  right: 0;
   top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+section.posts .posts-grid .post-card img {
+  width: 100vw;
+  position: absolute;
   left: 0;
   bottom: 0;
-  right: 0;
+  top: 0;
 }
 
