@@ -37,7 +37,6 @@ module.exports = {
       filename: '../styles/[name].css',
       chunkFilename: '[id].css'
     }),
-    new CopyPlugin([{ from: './content/assets', to: './public/assets' }])
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx', '.json']

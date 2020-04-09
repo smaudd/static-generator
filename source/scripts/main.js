@@ -1,7 +1,9 @@
 import '../styles/main.css'
 
 async function main() {
-  const { default: _ } = await import(/* webpackChunkName: "nav" */ './nav')
+  const { default: Nav } = await import(/* webpackChunkName: "nav" */ './nav')
+  const { default: Hax } = await import(/* webpackChunkName: "hax" */ './hax')
+  Hax()
 }
 
 main()

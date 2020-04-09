@@ -1,0 +1,66 @@
+section.author {
+  display: grid;
+  gap: var(--g1);
+  padding: var(--g1) 0;
+}
+
+section.author h3 {
+  font-family: var(--secondary-font);
+  font-weight: 200;
+  letter-spacing: var(--primary-spacing);
+  padding: 0 var(--g1);
+  margin: 0;
+}
+
+section.author .quote {
+  padding: 0 var(--g1);
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+section.author .quote img[section=quote-left] {
+  grid-row-start: 1;
+  align-self: center;
+  justify-self: center;
+}
+
+section.author .quote img[section=quote-right] {
+  grid-row-start: 3;
+  grid-column-start: 3;
+  align-self: center;
+  justify-self: center;
+}
+
+section.author .quote p {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  margin: 0;
+  font-family: var(--primary-font);
+  line-height: var(--primary-line-height);
+}
+
+section.author .avatar {
+  height: 300px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+section.author p[section=description] {
+  padding: 0 var(--g1);
+  font-family: var(--primary-font);
+  line-height: var(--primary-line-height);
+}
+
+section.author a {
+  padding: 0 var(--g1);
+  font-family: var(--secondary-font);
+  letter-spacing: var(--primary-spacing);
+  text-decoration: none;
+  color: black;
+}
+
+section.author a:visited {
+  color: black;
+}

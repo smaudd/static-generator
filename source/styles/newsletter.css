@@ -1,0 +1,56 @@
+section.newsletter {
+  display: grid;
+  grid-gap: var(--g1);
+}
+
+section.newsletter h2 {
+  font-family: var(--secondary-font);
+  letter-spacing: var(--primary-spacing);
+  margin: 0;
+  text-transform: uppercase;
+  color: white;
+}
+
+section.newsletter span {
+  font-family: var(--primary-font);
+  color: white;
+  letter-spacing: var(--primary-spacing);
+  max-width: 80%;
+}
+
+section.newsletter input {
+  background: transparent;
+  border: 2px solid white;
+  padding: var(--p1);
+  border-radius: var(--r1);
+  font-family: var(--primary-font);
+  letter-spacing: var(--primary-spacing);
+  height: 30px;
+}
+
+section.newsletter input::placeholder {
+  color: white;
+  font-family: var(--primary-font);
+  letter-spacing: var(--primary-spacing);
+}
+
+section.newsletter a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--p1);
+  border-radius: var(--r1);
+  border: 2px solid white;
+  font-family: var(--secondary-font);
+  letter-spacing: var(--primary-spacing);
+  height: 30px;
+  transition: background-color .3s, color .3s;
+}
+
+section.newsletter a:active,
+section.newsletter a:hover {
+  background-color: white;
+  color: var(--primary);
+}

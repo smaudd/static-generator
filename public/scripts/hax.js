@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{4:function(e,n,t){"use strict";t.r(n),n.default=function(){var e=new IntersectionObserver((function(e,n){e.forEach(e=>{e.isIntersecting&&(e.target.style.animation="fade-in 0.5s forwards",n.unobserve(e.target))})}),{rootMargin:"0px",threshold:0});document.querySelectorAll("[data-hax]").forEach(n=>e.observe(n))}}}]);

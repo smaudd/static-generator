@@ -1,4 +1,9 @@
 language: spanish
 url: http://localhost:8080
-title: boom
-hero: 'images/hero.png'
+title: BLOG
+author:
+  name: Juan Cagueta
+  punchline: My goal is to do all the research, so that you can make the most conscious decisions –– and be an effective activist –– when it comes to fashion.
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget turpis consectetur potenti. Enim, ullamcorper risus consectetur enim ut justo aliquam. Faucibus donec ut sit semper duis viverra. Vestibulum ipsum libero risus quam morbi pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget turpis consectetur potenti. Enim, ullamcorper risus consectetur.....
+footer: 
+  copyright: © 2020 Sustainable. All Rights Reserved. Branding by My Pollina. 

@@ -1,6 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway|Sen&display=swap);
 @import './animations.css';
 @import './nav.css';
+@import './author.css';
+@import './footer.css';
+@import './newsletter.css';
 
 body {
   padding: 0;
@@ -17,8 +20,12 @@ body {
   --font-base: 16px;
   --font-big: 20px;
   --font-big: 20px;
-  --primary-gap: 20px;
-  --secondary-gap: 60px;
+  --g1: 20px;
+  --g2: 30px;
+  --g3: 60px;
+  --primary-line-height: 2em;
+  --r1: 5px;
+  --p1: 5px;
 }
 
 body {
@@ -33,18 +40,19 @@ body {
 main {
   width: 100%;
   margin-top: 70px;
+  margin-bottom: var(--g3);
   display: grid;
-  grid-gap: var(--secondary-gap);
+  grid-gap: var(--g3);
   box-sizing: border-box;
 }
 
 .container {
-  padding: 0 var(--primary-gap);
+  padding: 0 var(--g1);
 }
 
 section.hero {
   display: grid;
-  grid-gap: var(--primary-gap);
+  grid-gap: var(--g1);
 }
 
 section.hero h6 {
@@ -71,7 +79,7 @@ section.hero img {
 
 section.hero .container {
   display: grid;
-  grid-gap: var(--primary-gap);
+  grid-gap: var(--g1);
 }
 
 section.hero .container p {
@@ -99,7 +107,7 @@ section.hero .info span {
 
 section.posts {
   display: grid;
-  grid-gap: var(--primary-gap);
+  grid-gap: var(--g1);
 }
 
 .title-section {
@@ -113,7 +121,7 @@ section.posts {
 section.posts .posts-grid {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-  grid-gap: var(--primary-gap);
+  grid-gap: var(--g1);
 }
 
 section.posts .posts-grid .post-card {
@@ -122,9 +130,10 @@ section.posts .posts-grid .post-card {
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  padding: var(--primary-gap);
+  padding: var(--g1);
   position: relative;
   text-decoration: none;
+  opacity: 0;
 }
 
 section.posts .posts-grid .post-card:visited {
@@ -136,7 +145,7 @@ section.posts .posts-grid .post-card h3 {
   font-family: var(--secondary-font);
   color: white;
   letter-spacing: var(--primary-spacing);
-  margin-top: var(--primary-gap);
+  margin-top: var(--g1);
   z-index: 1;
 }
 

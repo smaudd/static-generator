@@ -1,5 +1,3 @@
-console.log('soy nav')
-
 const burger = document.querySelector('.nav-burger')
 const burgerTop = document.querySelector(`span[section='top']`)
 const burgerCenter = document.querySelector(`span[section='center']`)

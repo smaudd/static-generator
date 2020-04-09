@@ -16,7 +16,7 @@
     <% }); %>
   </ul> -->
   <main>
-    <!-- <section class="hero">
+    <section class="hero" data-hax>
       <img src="<%= posts[0].images.hero %>" />
       <div class="container">
         <h6><%= posts[0].category %></h6>
@@ -28,9 +28,9 @@
         <%- posts[0].post.substring(0, 220) %>....</p>
         <a href="<%- posts[0].post.substring(0, 220) %>">LEER MAS</a>
       </div>
-    </section> -->
+    </section>
+    <h2 class="title-section" data-hax>MAS POSTS</h2>
     <section class="posts">
-      <h2 class="title-section">MAS POSTS</h2>
       <div class="posts-grid">
         <%- include('partials/post-card', { post: posts[0] }); %>
         <%- include('partials/post-card', { post: posts[0] }); %>
@@ -38,8 +38,11 @@
         <%- include('partials/post-card', { post: posts[0] }); %>
       </div>
     </section>
+    <h2 class="title-section" data-hax>SOBRE EL EDITOR</h2>
+    <%- include('partials/author', { author }); %>
   </main>
-  <script src="./scripts/bundle.js"></script>
+  <%- include('partials/footer', { footer }); %>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
