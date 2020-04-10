@@ -17,6 +17,19 @@
       <span class="nav-burger-section" section="center"></span>
       <span class="nav-burger-section" section="bottom"></span>
     </div>
+    <ul class="nav-list-desktop">
+      <li>ACERCA</li>
+      <li>NEWSLETTER</li>
+      <li>CONTÁCTO</li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path
+            d="M225.474 0C101.151 0 0 101.151 0 225.474c0 124.33 101.151 225.474 225.474 225.474 124.33 0 225.474-101.144 225.474-225.474C450.948 101.151 349.804 0 225.474 0zm0 409.323c-101.373 0-183.848-82.475-183.848-183.848S124.101 41.626 225.474 41.626s183.848 82.475 183.848 183.848-82.475 183.849-183.848 183.849z" />
+          <path
+            d="M505.902 476.472L386.574 357.144c-8.131-8.131-21.299-8.131-29.43 0-8.131 8.124-8.131 21.306 0 29.43l119.328 119.328A20.74 20.74 0 00491.187 512a20.754 20.754 0 0014.715-6.098c8.131-8.124 8.131-21.306 0-29.43z" />
+        </svg>
+      </li>
+    </ul>
   </div>
 </nav>
 <ul class="nav-list">
@@ -110,39 +123,41 @@
       </div>
     </section>
     <h2 class="title-section" data-hax>SOBRE EL EDITOR</h2>
-    <section class="author">
+    <section class="author" data-hax>
   <h3 data-hax>Juan Cagueta</h3>
   <div class="quote" data-hax>
     <img section="quote-left" src="assets/icons/quote1.svg" />
     <img section="quote-right" src="assets/icons/quote2.svg" />
     <p>My goal is to do all the research, so that you can make the most conscious decisions –– and be an effective activist –– when it comes to fashion.</p>
   </div>
-  <img class="avatar" style="background-image: url('assets/images/avatar.png')" data-hax>
+  <div class="avatar-wrapper" data-hax>
+    <img class="avatar" style="background-image: url('assets/images/avatar.png')" data-parallax>
+  </div>
   <p section="description" data-hax>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget turpis consectetur potenti. Enim, ullamcorper risus consectetur enim ut justo aliquam. Faucibus donec ut sit semper duis viverra. Vestibulum ipsum libero risus quam morbi pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget turpis consectetur potenti. Enim, ullamcorper risus consectetur.....</p>
   <a href="/acerca" data-hax>LEER MAS</a>
 </section>
   </main>
   <footer>
-  <section class="newsletter">
+  <div class="footer-container">
+    <section class="newsletter">
   <h2>Newsletter</h2>
   <span>Suscribete a nuestro newsletter semanal</span>
   <input type="text" name="email" placeholder="Tu email" />
   <a href="#">SUSCRIBIRME</a>
 </section>
-  <div class="wrapper">
-    <div class="logo">
-      LOGO
-    </div>
-    <div class="social-media">
-      <img src="assets/icons/instagram.svg">
-      <img src="assets/icons/facebook.svg">
-    </div>
+      <div class="logo">
+        LOGO
+      </div>
+      <div class="social-media">
+        <img src="assets/icons/instagram.svg">
+        <img src="assets/icons/facebook.svg">
+      </div>
+    <ul>
+      <li>ACERCA</li>
+      <li>CONTACTO</li>
+    </ul>
+    <span class="copyright">© 2020 Sustainable. All Rights Reserved. Branding by My Pollina.</span>
   </div>
-  <ul>
-    <li>ACERCA</li>
-    <li>CONTACTO</li>
-  </ul>
-  <span class="copyright">© 2020 Sustainable. All Rights Reserved. Branding by My Pollina.</span>
 </footer>
   <script src="./scripts/index.js"></script>
 </body>

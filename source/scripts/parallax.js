@@ -1,19 +1,21 @@
 function Parallax() {
+  const defaultScale = 1.5
   const targets = document.querySelectorAll('[data-parallax]')
-  console.log(window.innerHeight)
   function handleScroll() {
     const scrolled = window.pageYOffset
     const rate = scrolled * 0.05
-    console.log(rate, window.pageYOffset)
     targets.forEach(function(target) {
       const { top, bottom } = target.getBoundingClientRect()
-      
       const r = map(rate, 0, window.innerHeight * 0.1, 0, 50)
-      target.style.transform = `translate3d(0, ${r}px, 0) scale(1.5)`
+      const scale = target.getAttribute('data-parallax')
+      target.style.transform = `translate3d(0, ${r}px, 0) scale(${scale
+        ? scale
+        : defaultScale})`
     })
   }
   targets.forEach(function(target) {
-    target.style.transform = 'scale(1.5)'
+    const scale = target.getAttribute('data-parallax')
+    target.style.transform = `scale(${scale ? scale : defaultScale})`
   })
   window.addEventListener('scroll', handleScroll)
 }

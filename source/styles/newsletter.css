@@ -21,11 +21,14 @@ section.newsletter span {
 section.newsletter input {
   background: transparent;
   border: 2px solid white;
-  padding: var(--p1);
+  padding: var(--p2);
   border-radius: var(--r1);
   font-family: var(--primary-font);
+  font-size: var(--font-base);
   letter-spacing: var(--primary-spacing);
   height: 30px;
+  color: white;
+  outline: none;
 }
 
 section.newsletter input::placeholder {

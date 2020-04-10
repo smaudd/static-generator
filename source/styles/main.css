@@ -5,11 +5,6 @@
 @import './footer.css';
 @import './newsletter.css';
 
-body {
-  padding: 0;
-  margin: 0;
-}
-
 :root {
   --primary-font: 'Raleway', sans-serif;
   --secondary-font: 'Sen', sans-serif;
@@ -19,27 +14,29 @@ body {
   --secondary: #3a606e;
   --font-base: 16px;
   --font-big: 20px;
-  --font-big: 20px;
   --g1: 20px;
   --g2: 30px;
   --g3: 60px;
   --primary-line-height: 2em;
   --r1: 5px;
   --p1: 5px;
+  --p2: 10px;
 }
 
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   overflow-x: hidden;
   background-color: white;
 }
 
 main {
   width: 100%;
-  margin-top: 70px;
+  /* margin-top: 70px; */
+  display: flex;
+  justify-content: center;
   margin-bottom: var(--g3);
   display: grid;
   grid-gap: var(--g3);
@@ -177,4 +174,43 @@ section.posts .posts-grid .post-card img {
   left: 0;
   bottom: 0;
   top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  /* html {
+    display: flex;
+    justify-content: center;
+  } */
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main, .nav-header {
+    max-width: 1400px;
+  }
+
+  main {
+    margin-top: 120px;
+  }
+
+  section.hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  section.posts .posts-grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+  }
+
+  section.posts .posts-grid a:nth-child(1) {
+    grid-row-start: 2;
+  }
+
+  /* section.posts .posts-grid a:nth-child(2) {
+    grid-column: 1 / 6;
+    grid-row: 3 / 4;
+  } */
 }

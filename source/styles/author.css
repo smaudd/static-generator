@@ -2,6 +2,7 @@ section.author {
   display: grid;
   gap: var(--g1);
   padding: var(--g1) 0;
+  overflow: hidden;
 }
 
 section.author h3 {
@@ -38,6 +39,10 @@ section.author .quote p {
   margin: 0;
   font-family: var(--primary-font);
   line-height: var(--primary-line-height);
+}
+
+section.author .avatar-wrapper {
+  overflow: hidden;
 }
 
 section.author .avatar {
